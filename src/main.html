@@ -1,0 +1,43 @@
+<!--
+
+main.html
+  editor for TeX(mathjax)
+  
+  need file and lib
+  /main.html
+  /main.css
+  /main.js
+  /set_ele.js
+  /shortcut.js
+  /shortcut_matrix.js
+  /editor.js
+  /window.js
+  /MathJax-master/es5/tex-chtml.js
+
+  For more information about MathJax, see the following documents:
+  https://github.com/mathjax
+  https://docs.mathjax.org/en/latest/web/hosting.html
+  https://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm
+
+-->
+
+<!DOCTYPE html>
+<html lang = "ja">
+  <head>
+    <title>mathjax editor</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="MathJax-master/es5/tex-svg.js" id="MathJax-script"></script>
+    <script src="set_ele.js"></script>
+    <script src="shortcut.js"></script>
+    <script src="shortcut_matrix.js"></script>
+    <script src="editor.js"></script>
+    <script src="window.js"></script>
+  </head>
+  <body bgcolor="#ffffff" text="000000">
+    <h3>debug</h3>
+	  <div id="domBox"></div>
+	  <script src="main.js"></script>
+  </body>
+</html>
+

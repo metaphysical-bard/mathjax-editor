@@ -1,0 +1,236 @@
+/*
+
+main.css
+  set design and parameter
+
+*/
+
+@charset "UTF-8";
+
+:root {
+  --tab-size: 4;
+  --font-size: 16px;
+  --font-family: "Consolas", "Courier New", monospace;
+  --border-size: 3px;
+  --background: #ffffff;
+  --title-color: #515151;
+  --text-color: #000000;
+  --scrollbar-color1: #0000ff;
+  --scrollbar-color2: #beb6b6;
+
+  --point-size: 10px;
+  --point-colot: #808080;
+
+  --shortcut_outline: #817c7c;
+  --input-text-size: 13px;
+  --input-border: #000000;
+  --input-button-activ: #cbcbcb;
+  --input-range-color1: #929493;
+  --input-range-color2: #5a5e5b;
+
+  --caret-color: #000000;
+  --highlight-color-size: 10px;
+  --highlight-color-border: #000000;
+  --highlight-braces: #005eff;
+  --highlight-newline: #0000ff;
+  --highlight-cmd: #ff0000;
+  --highlight-comment: #318931;
+  --counter-color: #515151;
+}
+
+* { box-sizing: border-box; }
+
+div, p, pre, span, input {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  tab-size: var(--tab-size);
+}
+
+.point {
+  background: var(--point-colot);
+  width: var(--point-size);
+  height: var(--point-size);
+  border-radius: 50%;
+}
+
+.main_screen {
+  background: var(--background);
+  padding: var(--border-size);
+}
+
+.shortcut_buttons {
+  background: var(--background);
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--border-size);
+}
+
+.shortcut_buttons p {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  border-radius: 16px;
+  padding: 10px;
+  outline: 3px solid var(--shortcut_outline);
+  outline-offset: -5px;
+}
+
+.shortcut_buttons p input {
+  font-family: var(--font-family);
+  font-size: var(--input-text-size);
+  color: var(--text-color);
+  background: transparent;
+}
+
+.shortcut_buttons p input[type="text"] {
+  border: var(--input-border) solid 1px;
+  outline: none;
+}
+
+.shortcut_buttons p .w17 {
+  width: 136px;
+}
+
+.shortcut_buttons p .w14 {
+  width: 112px;
+}
+
+.shortcut_buttons p input[type="button"] {
+  border: var(--input-border) solid 1px;
+  border-left: none;
+  outline: none;
+
+  &:active {
+    background: var(--input-button-activ)
+  }
+}
+
+.shortcut_buttons p input[type="range"] {
+  border: none;
+  outline: none;
+
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--input-range-color1);
+  width: 80px;
+  height: 4px;
+  border-radius: 4px;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: var(--input-range-color2);
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+  }
+
+  &::-moz-range-thumb {
+    background: var(--input-range-color2);
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: none;
+  }
+
+  &::-moz-focus-outer {
+    border: 0;
+  }
+}
+
+.shortcut_buttons p input[type="number"] {
+  width: 48px;
+  border: var(--input-border) solid 1px;
+  outline: none;
+}
+
+.editor {
+  outline: none;
+  
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+
+  color: var(--text-color);
+  background-color: var(--background);
+  padding: var(--border-size);
+  padding-top: 10px;
+  padding-left: 48px;
+  caret-color: var(--caret-color);
+
+  resize: none;
+  cursor: default;
+  counter-reset: line;
+
+  &::before {
+    content: "mathjax editor";
+    font-size: 10px;
+    padding: 5px;
+    color: var(--title-color);
+    background-color: transparent;
+  }
+}
+
+.editor * {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  position: relative;
+  cursor: text;
+}
+
+.editor span { display: inline-block; }
+
+.editor .color {
+  padding: 3px;
+  width: var(--highlight-color-size);
+  height: var(--highlight-color-size);
+  border: var(--highlight-color-border) solid 1px;;
+  border-radius: 50%;
+}
+
+.editor .braces { color: var(--highlight-braces); }
+.editor .newline { color: var(--highlight-newline); }
+.editor .cmd { color: var(--highlight-cmd); }
+.editor .comment { color: var(--highlight-comment); }
+
+.editor pre::before {
+  content: counter(line);
+  counter-increment: line;
+  position: absolute;
+  right: calc(100% + var(--font-size));
+
+  font-size: var(--font-size);
+  color: var(--counter-color);
+  background-color: transparent;
+}
+
+.point, .main_screen, .shortcut_buttons p, .editor .color {
+  user-select:none;
+  -webkit-user-select:none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+}
+
+.main_screen, .shortcut_buttons, .editor {
+  overflow: auto;
+  /*overflow-y: auto;*/
+
+  /*Firefox*/
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color1) var(--scrollbar-color2);
+
+  /*Chrome, Edge, and Safari*/
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  &::-webkit-scrollbar-track {background: var(--scrollbar-color2);}
+  &::-webkit-scrollbar-corner {background: var(--scrollbar-color2);}
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-color1);
+    border-radius: 20px;
+    border: 3px solid var(--scrollbar-color2);
+  }
+}
+
