@@ -25,7 +25,7 @@ class shortcut_M extends set_ele_M {
     { str: "\\colon", cmd: "\\colon" },
     { str: "\\text{normal}", cmd: "\\text{}" },
     { str: "css-style", cmd: "\\style{}{}" },
-    { str: "{\\color{#cc0000}co}{\\color{#00cc00}l}{\\color{#0000cc}or}", cmd: "{\\color{}}" },
+    { str: "color", cmd: "{\\color{}}" },
     { str: "background", cmd: "\\bbox[]{}" },
     { str: "\\mathbb{blackboard-bold}", cmd: "\\mathbb{}" },
     { str: "\\mathcal{calligraphic}", cmd: "\\mathcal{}" },
