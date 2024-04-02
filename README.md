@@ -26,10 +26,10 @@ Here is examples of json text:
 ["name", "cmd"]
 ```
 ```json
-["\\(\frac{1}{2}\\)", "\frac{1}{2}"]
+["\\(\\frac{1}{2}\\)", "\\frac{1}{2}"]
 ```
 ```json
-["Trump Symbol", "\clubsuit\n\diamondsuit\n\heartsuit\n\spadesuit"]
+["Trump Symbol", "\\clubsuit\n\\diamondsuit\n\\heartsuit\n\\spadesuit"]
 ```
 The first element is the HTML code that will be pasted into the button.  
 The second element is the text that is inserted when the button is pressed.  
@@ -58,6 +58,9 @@ https://docs.mathjax.org/en/latest/web/hosting.html
 https://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm    
 
 ## Welecome to issues
-Please create an issue on github.      
-[bsky](https://bsky.app/profile/drywaterfall.bsky.social)    
-
+Please create an issue on github.  
+  
+  
+[bsky](https://bsky.app/profile/drywaterfall.bsky.social)
+  
+  
