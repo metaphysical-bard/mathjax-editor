@@ -55,6 +55,7 @@ div, p, pre, span, input {
   width: var(--point-size);
   height: var(--point-size);
   border-radius: 50%;
+  touch-action: none;
 }
 
 .main_screen {
