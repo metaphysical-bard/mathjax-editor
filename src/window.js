@@ -63,12 +63,13 @@ class window_M {
   }
 
   move_point(index, x, y) {
-    this.point[index].style.left = (x - 5) + "px"
-    this.point[index].style.top = (y - 5) + "px"
+    let add = getComputedStyle(this.point[index]).getPropertyValue("--main-size") * 5 / 6.25
+    this.point[index].style.left = (x - add) + "px"
+    this.point[index].style.top = (y - add) + "px"
   }
 
   design(flag) {
-    return flag ? "1px solid #808080" : "none";
+    return flag ? "1rem solid #808080" : "none";
   }
 
   border(style, top, btm, rgt, lef) {

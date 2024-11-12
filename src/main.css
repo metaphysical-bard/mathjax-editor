@@ -8,28 +8,31 @@ main.css
 @charset "UTF-8";
 
 :root {
+  --main-size: 6.25;
+  font-size: calc(var(--main-size) * 1%);
+
   --tab-size: 4;
-  --font-size: 16px;
+  --font-size: 16rem;
   --font-family: "Consolas", "Courier New", monospace;
-  --border-size: 3px;
+  --border-size: 3rem;
   --background: #ffffff;
   --title-color: #515151;
   --text-color: #000000;
   --scrollbar-color1: #0000ff;
   --scrollbar-color2: #beb6b6;
 
-  --point-size: 10px;
+  --point-size: 10rem;
   --point-colot: #808080;
 
   --shortcut_outline: #817c7c;
-  --input-text-size: 13px;
+  --input-text-size: 13rem;
   --input-border: #000000;
   --input-button-activ: #cbcbcb;
   --input-range-color1: #929493;
   --input-range-color2: #5a5e5b;
 
   --caret-color: #000000;
-  --highlight-color-size: 10px;
+  --highlight-color-size: 10rem;
   --highlight-color-border: #000000;
   --highlight-braces: #005eff;
   --highlight-newline: #0000ff;
@@ -55,6 +58,7 @@ div, p, pre, span, input {
 }
 
 .main_screen {
+  font-size: var(--font-size);
   background: var(--background);
   padding: var(--border-size);
 }
@@ -69,10 +73,10 @@ div, p, pre, span, input {
 .shortcut_buttons p {
   font-family: var(--font-family);
   font-size: var(--font-size);
-  border-radius: 16px;
-  padding: 10px;
-  outline: 3px solid var(--shortcut_outline);
-  outline-offset: -5px;
+  border-radius: 16rem;
+  padding: 10rem;
+  outline: 3rem solid var(--shortcut_outline);
+  outline-offset: -5rem;
 }
 
 .shortcut_buttons p input {
@@ -83,20 +87,20 @@ div, p, pre, span, input {
 }
 
 .shortcut_buttons p input[type="text"] {
-  border: var(--input-border) solid 1px;
+  border: var(--input-border) solid 1rem;
   outline: none;
 }
 
 .shortcut_buttons p .w17 {
-  width: 136px;
+  width: 136rem;
 }
 
 .shortcut_buttons p .w14 {
-  width: 112px;
+  width: 112rem;
 }
 
 .shortcut_buttons p input[type="button"] {
-  border: var(--input-border) solid 1px;
+  border: var(--input-border) solid 1rem;
   border-left: none;
   outline: none;
 
@@ -112,22 +116,22 @@ div, p, pre, span, input {
   -webkit-appearance: none;
   appearance: none;
   background: var(--input-range-color1);
-  width: 80px;
-  height: 4px;
-  border-radius: 4px;
+  width: 80rem;
+  height: 4rem;
+  border-radius: 4rem;
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     background: var(--input-range-color2);
-    width: 13px;
-    height: 13px;
+    width: 13rem;
+    height: 13rem;
     border-radius: 50%;
   }
 
   &::-moz-range-thumb {
     background: var(--input-range-color2);
-    width: 13px;
-    height: 13px;
+    width: 13rem;
+    height: 13rem;
     border-radius: 50%;
     border: none;
   }
@@ -138,8 +142,8 @@ div, p, pre, span, input {
 }
 
 .shortcut_buttons p input[type="number"] {
-  width: 48px;
-  border: var(--input-border) solid 1px;
+  width: 48rem;
+  border: var(--input-border) solid 1rem;
   outline: none;
 }
 
@@ -152,8 +156,8 @@ div, p, pre, span, input {
   color: var(--text-color);
   background-color: var(--background);
   padding: var(--border-size);
-  padding-top: 10px;
-  padding-left: 48px;
+  padding-top: 10rem;
+  padding-left: 48rem;
   caret-color: var(--caret-color);
 
   resize: none;
@@ -162,8 +166,8 @@ div, p, pre, span, input {
 
   &::before {
     content: "mathjax editor";
-    font-size: 10px;
-    padding: 5px;
+    font-size: 10rem;
+    padding: 5rem;
     color: var(--title-color);
     background-color: transparent;
   }
@@ -179,10 +183,10 @@ div, p, pre, span, input {
 .editor span { display: inline-block; }
 
 .editor .color {
-  padding: 3px;
+  padding: 3rem;
   width: var(--highlight-color-size);
   height: var(--highlight-color-size);
-  border: var(--highlight-color-border) solid 1px;;
+  border: var(--highlight-color-border) solid 1rem;
   border-radius: 50%;
 }
 
@@ -222,15 +226,15 @@ div, p, pre, span, input {
 
   /*Chrome, Edge, and Safari*/
   &::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 10rem;
+    height: 10rem;
   }
   &::-webkit-scrollbar-track {background: var(--scrollbar-color2);}
   &::-webkit-scrollbar-corner {background: var(--scrollbar-color2);}
   &::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-color1);
-    border-radius: 20px;
-    border: 3px solid var(--scrollbar-color2);
+    border-radius: 20rem;
+    border: 3rem solid var(--scrollbar-color2);
   }
 }
 

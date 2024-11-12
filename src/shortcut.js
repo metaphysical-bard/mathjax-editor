@@ -490,6 +490,24 @@ class shortcut_M extends set_ele_M {
     )
 
     this.add_setting(
+      "text size: " +
+      '<input type="range" min="5" max="20" step="0.01" value="6.25"/>' +
+      " " +
+      '<input type="number" min="5" max="20" step="0.01" value="6.25" />' +
+      '<input type="button" value="change" />',
+      (ele) => {
+        let range = ele.childNodes[1]
+        let num = ele.childNodes[3]
+        range.addEventListener("input", () => { num.value = range.value })
+        num.addEventListener("input", () => { range.value = num.value })
+        ele.childNodes[4].addEventListener("click", () => {
+          document.documentElement.style.setProperty("--main-size", range.value)
+          window.dispatchEvent(new Event("resize"))
+        })
+      }
+    )
+
+    this.add_setting(
       "tab size: " +
       '<input type="range" min="0" max="50" step="1" value="4"/>' +
       " " +

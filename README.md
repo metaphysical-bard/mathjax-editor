@@ -1,4 +1,4 @@
-# mathjax-editor_ver1.0
+# mathjax-editor_ver1.1
 This is a simple editor app. You can write LaTeX code. This works in both online and local environments.    
 
 [Demo page](https://metaphysical-bard.github.io/mathjax-editor/src/main.html)
@@ -59,6 +59,11 @@ https://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm
 
 ## Welecome to issues
 Please create an issue on github.  
+
+## version
+2024/04/01 first commits  
+2024/04/02 ver.1.0 release  
+2024/11/12 ver.1.1 release  
   
   
 [bsky](https://bsky.app/profile/drywaterfall.bsky.social)
