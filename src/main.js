@@ -10,6 +10,7 @@ let middle_obj
 let bottom_obj
 let window_obj
 let mathjax_working = false
+let laststr = ""
 let popstate = false
 {
   let startStr =
@@ -58,28 +59,30 @@ function refresh_top_obj(log = false) {
   }
   else {
     mathjax_working = true
-    top_obj.set_content("\\[" + bottom_obj.obj.innerText + "\\]")
+    let str = bottom_obj.obj.innerText
+    top_obj.set_content("\\[" + str + "\\]")
     MathJax.typesetPromise([top_obj.obj]).finally(() => { mathjax_working = false })
-    let nextUrl = location.href.split("?")[0] + "?" + (new URLSearchParams({ code : bottom_obj.obj.innerText })).toString()
-    if (log === true && popstate === false) {
-      history.pushState({}, "", nextUrl)
-    }
-    else {
-      popstate = false
-      history.replaceState({}, "", nextUrl)
+    if (laststr !== str) {
+      laststr = str
+      let nextUrl = location.href.split("?")[0] + "?" + (new URLSearchParams({ code : str })).toString()
+      if (log === true && popstate === false) {
+        history.pushState({}, "", nextUrl)
+      }
+      else {
+        popstate = false
+        history.replaceState({}, "", nextUrl)
+      }
     }
   }
 }
 
 window.addEventListener("popstate", (event) => {
   popstate = true
-  let str = ""
+  let str = "% write code here "
   let params = new URLSearchParams(window.location.search)
   if (params.has("code")) { str = params.get("code") }
-  bottom_obj.ele.childNodes[0].innerText = str
-  let c = bottom_obj.ele.childNodes.length - 1
-  for (let i = 0; i < c; i++)
-    bottom_obj.ele.removeChild(bottom_obj.ele.childNodes[1])
-  bottom_obj.reform()
+  bottom_obj.ele.innerHTML = bottom_obj.formatStr(str)
+  bottom_obj.range.focus()
+  bottom_obj.efunc()
 })
 

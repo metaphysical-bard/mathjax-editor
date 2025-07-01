@@ -80,6 +80,7 @@ class editor_M extends set_ele_M {
       }
     
       if (flag === true) { this.reform() }
+      this.efunc()
     })
     
     this.ele.addEventListener("paste", (event) => {
